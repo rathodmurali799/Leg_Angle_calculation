@@ -3,6 +3,30 @@ Webcam Leg Angle Calculation
 Introduction:
 This project uses a webcam to calcualtion leg angles in real-time. It leverages MediaPipe Pose for human pose estimation, OpenCV for video capture and display, and NumPy for numerical calculations. The system can optionally count repetitions of leg movements, smooth noisy measurements, log data to CSV, and save processed video.
 
+Workflow Steps
+
+Open webcam & configure frame size/FPS.
+
+Initialize MediaPipe Pose.
+
+Capture frames in a loop.
+
+Detect pose landmarks.
+
+Calculate knee angles using hip-knee-ankle coordinates.
+
+Apply smoothing (EMA + median buffer, optional).
+
+Count reps using state machine (optional).
+
+Draw skeleton, angles, FPS, and rep counts.
+
+Log to CSV & save video (optional).
+
+Display video → quit on q.
+
+Cleanup resources.
+
 It is designed for applications such as:
 
 Exercise tracking (e.g., squats, lunges)
